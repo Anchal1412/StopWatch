@@ -22,7 +22,7 @@ class MainActivity : AppCompatActivity() {
     @SuppressLint("SetTextI18n", "CutPasteId")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        enableEdgeToEdge()
+
         setContentView(binding.root)
         val lapsList=ArrayList<String>()
         val arrayAdapter=ArrayAdapter<String>(this,android.R.layout.simple_list_item_1,lapsList)
@@ -37,12 +37,12 @@ class MainActivity : AppCompatActivity() {
         binding.clock.setOnClickListener{
                 val dialog=Dialog(this)
                 dialog.setContentView(R.layout.dialouge)
-                val numberPicker=dialog.findViewById<NumberPicker>(R.id.numberpicker)
+                val numberPicker=dialog.findViewById<NumberPicker>(R.id.numberPicker)
             numberPicker.minValue=0
             numberPicker.maxValue=5
             dialog.findViewById<Button>(R.id.set_time).setOnClickListener{
                 minutes=numberPicker.value.toString()
-                binding.clocktime.text= dialog.findViewById<NumberPicker>(R.id.numberpicker).value.toString()+" mins"
+                binding.clocktime.text= dialog.findViewById<NumberPicker>(R.id.numberPicker).value.toString()+" mins"
                 dialog.dismiss()
             }
             dialog.show()
@@ -51,7 +51,7 @@ class MainActivity : AppCompatActivity() {
             if (!isRunning) {
                 isRunning = false
                 if (!minutes.equals("00.00.00")) {
-                    val totalmin = minutes!!.toInt() * 60 * 1000L
+                    val totalmin = minutes!!.toInt()*60*1000L
 
                     binding.chronometer.base = SystemClock.elapsedRealtime() + totalmin
                     binding.chronometer.format = "%S %S"

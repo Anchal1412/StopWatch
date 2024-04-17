@@ -2,7 +2,7 @@
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/main"
+
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     tools:context=".MainActivity">
@@ -46,7 +46,7 @@
             app:layout_constraintTop_toBottomOf="@+id/clock" />
 
         <View
-            android:id="@+id/view3"
+            android:id="@+id/divider"
             android:layout_width="match_parent"
             android:layout_height="2dp"
             android:layout_marginTop="48dp"
@@ -66,10 +66,9 @@
             android:textStyle="normal"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.497"
-            app:layout_constraintStart_toStartOf="@+id/view3"
-            app:layout_editor_absoluteY="292dp"
-            tools:layout_editor_absoluteY="292dp"
-            tools:ignore="MissingConstraints" />
+            app:layout_constraintStart_toStartOf="@+id/divider"
+            app:layout_constraintTop_toBottomOf="@+id/divider"
+             />
 
         <Chronometer
             android:id="@+id/chronometer"
@@ -97,7 +96,7 @@
             app:layout_constraintEnd_toEndOf="@+id/chronometer"
             app:layout_constraintHorizontal_bias="0.496"
             app:layout_constraintStart_toStartOf="@+id/chronometer"
-            app:layout_constraintTop_toTopOf="@+id/chronometer" />
+            app:layout_constraintTop_toBottomOf="@+id/chronometer" />
 
         <ListView
             android:id="@+id/listview"
